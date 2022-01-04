@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './AddEntryForm';
 
 const AddEntryForm = (props) => {
 
@@ -9,18 +10,22 @@ const AddEntryForm = (props) => {
         event.preventDefault();
         let newEntry = {
             weight: weight,
-            date: date            
+            date: date
         };
         props.addNewEntry(newEntry)
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Weight</label>
-            <input type='number' value={weight} onChange={(event) => setWeight(parseFloat(event.target.value))}/>
-            <label>Date</label>
-            <input type='date' value={date} onChange={(event) => setDate(event.target.value)}/>
-            <button type='submit'>Submit Dat Shit</button>
+        <form onSubmit={handleSubmit} className='form-grid'>
+            <div className="form-group">
+                <label>Weight</label>
+                <input type='number' className="form-control" value={weight} onChange={(event) => setWeight(parseFloat(event.target.value))} />
+            </div>
+            <div className="form-group">
+                <label>Date</label>
+                <input type='date' className="form-control" value={date} onChange={(event) => setDate(event.target.value)} />
+            </div>
+            <button type='submit' class="btn btn-primary" style={{'margin-top': '1em'}}>Submit Dat Shit</button>
         </form>
     );
 }

@@ -1,0 +1,7 @@
+.border-box {
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(255, 105, 218);
+    margin: 1em;
+    padding: 1em;
+}
